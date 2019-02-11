@@ -10,9 +10,10 @@ class CatalogController < ApplicationController
                Book.all.limit(12).order("#{sort_column} #{sort_direction}")
              end
   end
-  
+
   def show
     @current_user
+    @path_to_back = request.referer
     @categorys = Category.all
     @book = Book.find_by(id: params[:id])
   end

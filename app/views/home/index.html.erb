@@ -72,10 +72,13 @@
                 <%= image_tag book.book_photos.first.imagen %>
                 <div class="thumb-hover">
                   <div class="general-thumb-link-wrap">
+                    <%= link_to catalog_show_path(id: book.id), class: "thumb-hover-link" do %>
+	                    <i aria-hidden="true" class="fa fa-eye thumb-icon"></i>
+	                  <% end %>
                     <a href="#" class="thumb-hover-link">
-<i aria-hidden="true" class="fa fa-eye thumb-icon"></i></a>
-                    <a href="#" class="thumb-hover-link">
-<i class="fa fa-shopping-cart thumb-icon"></i></a></div>
+                      <i class="fa fa-shopping-cart thumb-icon"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

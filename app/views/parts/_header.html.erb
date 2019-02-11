@@ -26,9 +26,9 @@
             <ul id="menu" aria-expanded="false" class="collapse list-unstyled pl-30 mb-10">
               <% @categorys.each do |category| %>
                 <li>
-                  <a href="#" id="<%= category.id %>" class="collapse-link">
+                  <%= link_to catalog_path(id: category.id), class: "collapse-link" do %>
                     <%= category.title %>
-                  </a>
+                  <% end %>
                 </li>
                 <li>
                   <% end %>
@@ -48,7 +48,9 @@
             <ul class="dropdown-menu">
               <% @categorys.each do |category| %>
               <li>
-                <a href="#" id="category_<%= category.id %>"><%= category.title %></a>
+                <%= link_to catalog_path(id: category.id), class: "collapse-link" do %>
+                  <%= category.title %>
+                <% end %>
               </li>
               <% end %>
               <li role="separator" class="divider"></li>

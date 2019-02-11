@@ -1,12 +1,12 @@
-# frozen_string_literal: true
-
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       t.string :name
-      t.string :photo
+      t.string :uid
+      t.string :token
+      t.string :avatar
       t.string :addres
-      t.string :email
+
       t.timestamps
     end
   end

@@ -5,13 +5,17 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+
+gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -30,10 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'execjs'
-gem 'therubyracer'
 gem 'factory_bot_rails'
-gem 'ffaker', '~> 2.2'
 gem 'faker'
+gem 'ffaker', '~> 2.2'
+gem 'therubyracer'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -46,10 +50,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'factory_bot_rails'
+  # gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
-  gem 'ffaker', '~> 2.2'
-  gem 'faker'
+  # gem 'ffaker', '~> 2.2'
+  # gem 'faker'
 end
 
 group :development do

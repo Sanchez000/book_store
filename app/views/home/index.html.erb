@@ -5,6 +5,15 @@
 
   <body>
     <%= render 'parts/header' %>
+
+    <div class="row LoginCard">
+      <div class="col-xs-6 col-xs-offset-3">
+        <%= link_to "Sign in with Facebook",
+            user_facebook_omniauth_authorize_url(),
+            class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
+
     <main class="container">
       <div id="slider" data-ride="carousel" class="carousel slide">
         <ol class="carousel-indicators">

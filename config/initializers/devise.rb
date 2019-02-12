@@ -13,7 +13,7 @@ Devise.setup do |config|
   config.omniauth :facebook,
                   ENV["FB_APP_ID"],
                   ENV["FB_APP_SECRET"],
-                  callback_url: "#{root_path}/users/auth/facebook/callback",
+                  callback_url: "#{root}/users/auth/facebook/callback",
                   :scope => 'email',
                   :info_fields => 'email'
 

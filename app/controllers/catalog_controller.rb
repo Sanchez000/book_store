@@ -3,12 +3,14 @@ class CatalogController < ApplicationController
 
   def index
     @categorys = Category.all
-    @books = if params[:id]
-               @selected_category_id = params[:id]
-               Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
-             else
-               Book.all.limit(12).order("#{sort_column} #{sort_direction}")
-             end
+     if @categorys.include(params[:id])
+          @books = if params[:id]
+                     @selected_category_id = params[:id]
+                     Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
+                   else
+                     Book.all.limit(12).order("#{sort_column} #{sort_direction}")
+                   end
+        end
   end
 
   def show

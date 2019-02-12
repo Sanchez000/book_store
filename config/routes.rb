@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'auth/callback' }
+  # devise_for :users, controllers: { omniauth_callbacks: 'auth/callback' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'home#index'
-  get 'users/auth/facebook/callback' => 'callback#index'
+  # get 'users/auth/facebook/callback' => 'callback#index'
   get '/catalog' => 'catalog#index', as: 'catalog'
   get '/catalog/book/:id', to: 'catalog#show', as: 'catalog_show'
   get '/' => 'home#index', as: 'home'

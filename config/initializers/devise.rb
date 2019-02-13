@@ -14,8 +14,9 @@ Devise.setup do |config|
                   ENV["FB_APP_ID"],
                   ENV["FB_APP_SECRET"],
                   callback_url: ENV['SERVER_ROOT'] + "/users/auth/facebook/callback",
-                  :scope => 'email',
-                  :info_fields => 'email'
+                  token_params: { parse: :json },
+                  scope: 'email',
+                  info_fields: 'email'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.

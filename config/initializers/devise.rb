@@ -14,7 +14,7 @@ Devise.setup do |config|
                   ENV["FB_APP_ID"],
                   ENV["FB_APP_SECRET"],
                   #callback_url: ENV['SERVER_ROOT'] + "https://boiling-sea-41226.herokuapp.com/users/auth/facebook/callback",
-                  callback_url: 'https://boiling-sea-41226.herokuapp.com/users/auth/facebook/callback',
+                  callback_url: 'https://desolate-bayou-88560.herokuapp.com/users/auth/facebook/callback',
                   token_params: { parse: :json },
                   scope: 'email',
                   info_fields: 'email'

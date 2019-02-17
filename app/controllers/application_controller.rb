@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource_or_scope) || super
   end
 
-  def after_sign_out_path_for(resource_or_scope)
+  def after_sign_out_path_for(_resource_or_scope)
     URI.parse(request.referer).path if request.referer
   end
 

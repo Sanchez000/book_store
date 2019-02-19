@@ -15,7 +15,7 @@
           <div class="carousel slide article-slide" id="myCarousel">
             <div class="carousel-inner cont-slider">
               <div class="item active">
-                <%= image_tag @book.book_photos.first.imagen %>
+                <%= image_tag @book_presenter.first_imagen %>
               </div>
               <% @book.book_photos.offset(1).each do |book| %>
               <div class="item">
@@ -28,7 +28,7 @@
             <!-- Indicators -->
             <ol class="carousel-indicators visible-lg visible-md">
               <li class="active" data-slide-to="0" data-target="#myCarousel">
-                <%= image_tag @book.book_photos.first.imagen %>
+                <%= image_tag @book_presenter.first_imagen %>
               </li>
               <% @book.book_photos.offset(1).each_with_index do |book, index| %>
               <li data-slide-to="<%= index + 1 %>" data-target="#myCarousel">

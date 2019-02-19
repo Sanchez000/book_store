@@ -1,7 +1,10 @@
-class BookPresenter < BasePresenter
-  presents :book
+class BookPresenter
+  def initialize book, template
+    @book = book
+    @template = template
+  end
 
   def authors_list
-    @model.author.map { |author| author.first_name + ' ' + author.last_name }.join(', ')
+    @book.author.map { |author| author.first_name + ' ' + author.last_name }.join(', ')
   end
 end

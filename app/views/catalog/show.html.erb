@@ -43,7 +43,7 @@
         <div class="col-sm-6">
           <h1 class="mt-res-0"><%= @book.title %></h1>
           <p class="lead small">
-            <%= @book.author.map { |author| author.first_name + ' ' + author.last_name }.join(", ") %>
+            <%= @book_presenter.authors_list %>
           </p>
           <div class="row">
             <div class="col-xs-12 col-md-4">

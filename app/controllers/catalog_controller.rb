@@ -32,7 +32,9 @@ class CatalogController < ApplicationController
   def show
     @path_to_back = request.referer
     @categorys = Category.all
-    @book = Book.find_by(id: params[:id])
+    book = Book.find_by(id: params[:id])
+    @book = book
+    @book_presenter = BookPresenter.new(book, view_context)
   end
 
   private

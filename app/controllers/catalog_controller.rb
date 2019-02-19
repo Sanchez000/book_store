@@ -19,7 +19,7 @@ class CatalogController < ApplicationController
   }.freeze
 
   def index
-    @categorys = Category.all
+    # @categorys = Category.all
     @sorting_order = SORTING_ORDER[sort_column.to_sym][sort_direction.to_sym]
           @books = if params[:id]
                      @selected_category_id = params[:id]
@@ -31,7 +31,7 @@ class CatalogController < ApplicationController
 
   def show
     @path_to_back = request.referer
-    @categorys = Category.all
+    # @categorys = Category.all
     book = Book.find_by(id: params[:id])
     @book = book
     @book_presenter = BookPresenter.new(book, view_context)

@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def new
-    @categorys = Category.all
+    # @categorys = Category.all
     super
   end
 

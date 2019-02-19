@@ -1,6 +1,6 @@
 class PasswordsController < Devise::PasswordsController
   def new
-    @categorys = Category.all
+    # @categorys = Category.all
     super
   end
 

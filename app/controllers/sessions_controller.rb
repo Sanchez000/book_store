@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
   def new
-    @categorys = Category.all
+    # @categorys = Category.all
     super
   end
 

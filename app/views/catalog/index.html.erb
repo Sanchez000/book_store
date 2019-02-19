@@ -75,7 +75,7 @@
                   <p class="title"><%= book.title %></p>
                   <p class="font-16 in-gold-500">€<%= book.price %></p>
                   <span class="divider-sm"></span>
-                  <p class="lead small"><%= book.author.map { |author| author.first_name + ' ' + author.last_name }.join(", ") %></p>
+                  <p class="lead small"><%= BookPresenter.new(book, view_context).authors_list %></p>
                 </div>
               </div>
               <% end %>
@@ -102,7 +102,7 @@
                   <p class="title"><%= book.title %></p>
                   <p class="font-16 in-gold-500">€<%= book.price %></p>
                   <span class="divider-sm"></span>
-                  <p class="lead small"><%= book.author.map { |author| author.first_name + ' ' + author.last_name }.join(", ") %></p>
+                  <p class="lead small"><%= BookPresenter.new(book, view_context).authors_list %></p>
                 </div>
               </div>
               <% end %>

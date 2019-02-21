@@ -18,6 +18,11 @@ module CatalogService
       desc: 'Newest first'
     }
   }.freeze
+  
+  
+  def select_books(params)
+    params[:id] ? sort_current_categories(params) : sort_all_books(params)
+  end
 
   def sorting(params)
      SORTING_ORDER[sort_column(params).to_sym][sort_direction(params).to_sym]    
@@ -28,7 +33,7 @@ module CatalogService
   end
   
   def sort_current_categories(params)
-    Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
+    Category.find_by(id: params[:id]).books.order("#{sort_column(params)} #{sort_direction(params)}")
   end
 
   private

@@ -2,12 +2,8 @@ class CatalogController < ApplicationController
 
   def index
     @sorting_order = CatalogService.sorting(params)
-          @books = if params[:id]
-                     @selected_category_id = params[:id]
-                     CatalogService.sort_current_categories(params)
-                   else
-                     CatalogService.sort_all_books(params)
-                   end
+    @selected_category_id = params[:id] if params[:id]
+    @books = CatalogService.select_books(params)
   end
 
   def show
@@ -15,5 +11,4 @@ class CatalogController < ApplicationController
     @book = book
     @book_presenter = BookPresenter.new(book, view_context)
   end
-
 end

@@ -23,6 +23,14 @@ module CatalogService
      SORTING_ORDER[sort_column(params).to_sym][sort_direction(params).to_sym]    
   end
   
+  def sort_all_books(params)
+    Book.all.limit(12).order("#{sort_column(params)} #{sort_direction(params)}")
+  end
+  
+  def sort_current_categories(params)
+    Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
+  end
+
   private
 
   def sortable_columns

@@ -19,7 +19,7 @@ class CatalogController < ApplicationController
   }.freeze
 
   def index
-    @sorting_order = SORTING_ORDER[sort_column.to_sym][sort_direction.to_sym]
+    @sorting_order = CatalogService.sorting(params)
           @books = if params[:id]
                      @selected_category_id = params[:id]
                      Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(_resource_or_scope)
     URI.parse(request.referer).path if request.referer
   end
-  
+
   def find_all_categories
     @categorys = Category.all
   end

@@ -8,34 +8,19 @@
 
 require 'factory_bot_rails'
 
-Category.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' } ])
+Category.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' }])
 
-5.times do
-  FactoryBot.create(:random_author)
-end
+15.times do
+  first_author = FactoryBot.create(:random_author)
+  second_author = FactoryBot.create(:random_author)
 
-8.times do
   book = FactoryBot.create(:random_book)
-  BookPhoto.create(book: book, imagen: 'https://d31wxntiwn0x96.cloudfront.net/rzgade/productimages/1276.jpg?width=400&amp;height=400&amp;etag=%22a2ebd1488b087bf0e6db43ee8bae0634%22' )
-  BookPhoto.create(book: book, imagen: 'https://jonathantweedy.com/resources/thumbs/SmashingBook5ResponsiveWebDesign.jpg' )
-  BookPhoto.create(book: book, imagen: 'https://d31wxntiwn0x96.cloudfront.net/rzgade/productimages/1276.jpg?width=400&amp;height=400&amp;etag=%22a2ebd1488b087bf0e6db43ee8bae0634%22' )
-  BookPhoto.create(book: book, imagen: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ352GRUKdIFLP3va0Tj7QREidI4lwUABrtUJbQehqIL02O_blo' )
-end
+  BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/1.webp')
+  BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/2.webp')
+  BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/3.webp')
+  BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/4.webp')
+  BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/5.webp')
 
-AuthorBook.create(author_id: 1, book_id: 2)
-AuthorBook.create(author_id: 2, book_id: 2)
-AuthorBook.create(author_id: 3, book_id: 2)
-AuthorBook.create(author_id: 1, book_id: 1)
-AuthorBook.create(author_id: 1, book_id: 3)
-AuthorBook.create(author_id: 2, book_id: 3)
-AuthorBook.create(author_id: 3, book_id: 3)
-AuthorBook.create(author_id: 1, book_id: 4)
-AuthorBook.create(author_id: 2, book_id: 4)
-AuthorBook.create(author_id: 1, book_id: 5)
-AuthorBook.create(author_id: 2, book_id: 5)
-AuthorBook.create(author_id: 1, book_id: 6)
-AuthorBook.create(author_id: 3, book_id: 6)
-AuthorBook.create(author_id: 3, book_id: 7)
-AuthorBook.create(author_id: 2, book_id: 7)
-AuthorBook.create(author_id: 2, book_id: 8)
-AuthorBook.create(author_id: 4, book_id: 8)
+  AuthorBook.create(author_id: first_author.id, book_id: book.id)
+  AuthorBook.create(author_id: second_author.id, book_id: book.id)
+end

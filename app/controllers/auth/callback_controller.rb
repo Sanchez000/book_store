@@ -5,7 +5,7 @@ class Auth::CallbackController < ApplicationController
   end
 
   def failure
-    redirect_to '/catalog'# :root
+    redirect_to root_path
   end
 
   private

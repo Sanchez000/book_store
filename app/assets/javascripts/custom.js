@@ -15,12 +15,11 @@ $('.dropdown-menu').on('click', function(e){
   $('#dropdownMenuLink').text(selected_name);
 });
 
-
-$('.line-height-2').css('overflow', 'hidden');
-$('.line-height-2').readmore({
-embedCSS: false,
-collapsedHeight: 200,
-startOpen: false,
-moreLink: '<a href="#" class="in-gold-500 ml-10">Read More</a>',
-lessLink: '<a href="#" class="in-gold-500 ml-10">Read less</a>'
-});
+$('#description').css('overflow', 'hidden');
+$('#description').readmore({
+		embedCSS: false,
+		collapsedHeight: 165,
+		startOpen: false,
+		moreLink: '<a href="#" class="in-gold-500 ml-10">Read More</a>',
+		lessLink: '<a href="#" class="in-gold-500 ml-10">Read less</a>'
+	});

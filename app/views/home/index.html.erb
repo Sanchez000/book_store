@@ -27,7 +27,7 @@
               <div class="col-sm-7">
                 <div class="mb-60">
                   <h1><%= book.title %></h1>
-                  <p class="lead"><%= book.description%></p>
+                  <p class="lead" id="description"><%= book.description %></p>
                   <p class="lead small"><%= book.author.map { |author| author.first_name + ' ' + author.last_name }.join(", ") %></p>
                   <div class="general-align">
                     <button class="disabled btn">Buy Now</button></div>
@@ -62,7 +62,7 @@
         <h3>Best Sellers</h3>
         <div class="row">
 
-          <% @best_sellers.first(4).each do |book| %>
+          <% @best_sellers.each do |book| %>
           <div class="col-sm-6 col-md-3">
             <div class="general-thumb-wrap">
               <div class="thumbnail general-thumbnail">

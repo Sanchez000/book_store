@@ -24,7 +24,7 @@ FactoryBot.define do
     publication_year { FFaker::Vehicle.year }
     dimentions { FFaker::Vehicle.engine_displacement }
     sales_count { rand(1..15) }
-    description { FFaker::Book.description }
+    description { FFaker::Book.description(10) }
     material { Faker::Commerce.material }
   end
 end

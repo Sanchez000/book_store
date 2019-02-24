@@ -1,5 +1,5 @@
 class BookPresenter
-  def initialize book, template
+  def initialize(book, template)
     @book = book
     @template = template
   end
@@ -7,8 +7,8 @@ class BookPresenter
   def authors_list
     @book.author.map { |author| author.first_name + ' ' + author.last_name }.join(', ')
   end
-  
-  def first_imagen
+
+  def first_image
     @book.book_photos.first.imagen
   end
 end

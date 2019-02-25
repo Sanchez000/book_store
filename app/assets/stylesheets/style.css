@@ -9,6 +9,19 @@ body {
 /*#####################
 Additional Styles (required)
 #####################*/
+#main_img {
+  max-width: 550px;
+  max-height: 380px;
+  margin: auto;
+}
+
+#description {
+  overflow: hidden;
+}
+
+.small-img {
+  height: 120px;
+}
 
 #myCarousel .carousel-inner {
   padding-bottom: 90px;

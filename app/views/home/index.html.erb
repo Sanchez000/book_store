@@ -27,7 +27,7 @@
               <div class="col-sm-7">
                 <div class="mb-60">
                   <h1><%= book.title %></h1>
-                  <p class="lead" id="description"><%= book.description %></p>
+                  <p class="lead"><%= book.description %></p>
                   <p class="lead small"><%= book.author.map { |author| author.first_name + ' ' + author.last_name }.join(", ") %></p>
                   <div class="general-align">
                     <button class="disabled btn">Buy Now</button></div>

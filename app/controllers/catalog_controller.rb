@@ -1,8 +1,9 @@
 class CatalogController < ApplicationController
   def index
-    @sorting_order = CatalogService.sorting(params)
+    service = CatalogService.new(params)
+    @sorting_order = service.sorting
     @selected_category_id = params[:id] if params[:id]
-    @books = CatalogService.select_books(params)
+    @books = service.select_books
   end
 
   def show

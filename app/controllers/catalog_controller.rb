@@ -3,7 +3,8 @@ class CatalogController < ApplicationController
     service = CatalogService.new(params)
     @sorting_order = service.sorting
     @selected_category_id = params[:id] if params[:id]
-    @books = service.select_books
+    @selected_page = params[:page] || 1
+    @books = service.select_books.page(params[:page]).decorate
   end
 
   def show

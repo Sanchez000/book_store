@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords', omniauth_callbacks: 'users/omniauth_callbacks' }
+  resources :home, only: [:index], as: 'home'
   root to: 'home#index'
-  get '/catalog', to: 'catalog#index', as: 'catalog'
-  get '/catalog/book/:id', to: 'catalog#show', as: 'catalog_show'
-  get '/' => 'home#index', as: 'home'
+  resources :catalog, only: %i[index show], as: 'catalog'
 end

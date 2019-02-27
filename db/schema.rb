@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_02_13_151203) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.decimal "price"
-    t.bigint "category_id"
+    t.bigint "categories_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "publication_year"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_02_13_151203) do
     t.integer "sales_count"
     t.text "description"
     t.string "material"
-    t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["categories_id"], name: "index_books_on_categories_id"
   end
 
   create_table "categories", force: :cascade do |t|

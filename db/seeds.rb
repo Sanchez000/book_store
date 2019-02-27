@@ -8,9 +8,9 @@
 
 require 'factory_bot_rails'
 
-Category.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' }])
+Categories.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' }])
 
-15.times do
+35.times do
   first_author = FactoryBot.create(:random_author)
   second_author = FactoryBot.create(:random_author)
 

@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
   end
 
   def find_all_categories
-    @categorys = Category.all
+    @categories = Categories.decorate.first(4)
+    @count_all_books_in_all_catogories = @categories.map(&:books).flatten.size
   end
 
   private

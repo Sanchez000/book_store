@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('#description').readmore({
+	$('p.description').readmore({
 		collapsedHeight: 165,
 		moreLink: '<a href="#" class="in-gold-500 ml-10">Read More</a>',
 		lessLink: '<a href="#" class="in-gold-500 ml-10">Read less</a>'

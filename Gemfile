@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.2'
 gem 'devise'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'draper'
+gem 'i18n_lazy_scope'
 gem 'kaminari'
 gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record

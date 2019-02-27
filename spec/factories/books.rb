@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :book do
     title { 'Android Programming for Beginners' }
     price { 10.00 }
-    category_id { 2 }
+    categories_id { 2 }
     publication_year { 2016 }
     dimentions { '1,2,3' }
     sales_count { 1 }
@@ -20,7 +20,7 @@ FactoryBot.define do
   factory :random_book, class: Book do
     title { FFaker::Book.title }
     price { Faker::Commerce.price }
-    category_id { rand(1..3) }
+    categories_id { rand(1..4) }
     publication_year { FFaker::Vehicle.year }
     dimentions { FFaker::Vehicle.engine_displacement }
     sales_count { rand(1..15) }

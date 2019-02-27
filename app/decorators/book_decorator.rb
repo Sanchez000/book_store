@@ -12,4 +12,8 @@ class BookDecorator < Draper::Decorator
   def authors
     object.author.map { |author| author.first_name + ' ' + author.last_name }.join(', ')
   end
+
+  def list_dimentions
+    "H: #{object.dimentions} x W: #{object.dimentions}  x D: #{object.dimentions}"
+  end
 end

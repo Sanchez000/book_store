@@ -3,9 +3,6 @@
   color: white !important;
 }
 
-body {
-	/*padding-top:50px;*/
-}
 /*#####################
 Additional Styles (required)
 #####################*/
@@ -15,7 +12,7 @@ Additional Styles (required)
   margin: auto;
 }
 
-#description {
+.description {
   overflow: hidden;
 }
 

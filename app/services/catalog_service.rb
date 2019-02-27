@@ -25,7 +25,7 @@ class CatalogService
   end
 
   def select_books
-    params[:id] ? sort_current_categories : sort_all_books
+    params[:categori_id] ? sort_current_categories : sort_all_books
   end
 
   def sorting
@@ -33,11 +33,11 @@ class CatalogService
   end
 
   def sort_all_books
-    Book.all.limit(12).order("#{sort_column} #{sort_direction}")
+    Book.all.order("#{sort_column} #{sort_direction}")
   end
 
   def sort_current_categories
-    Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
+    Categories.find_by(id: params[:categori_id]).books.order("#{sort_column} #{sort_direction}")
   end
 
   private

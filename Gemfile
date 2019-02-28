@@ -40,6 +40,7 @@ gem 'execjs'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'ffaker', '~> 2.2'
+gem 'rails-controller-testing'
 gem 'therubyracer'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

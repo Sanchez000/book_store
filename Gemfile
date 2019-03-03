@@ -15,6 +15,7 @@ gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
+gem 'pry', '~> 0.12.2'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '>= 3.4.1'
@@ -72,6 +73,9 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner'
+  gem 'phantomjs'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

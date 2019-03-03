@@ -53,18 +53,18 @@
         </ul>
       </div>
       <div class="mb-120">
-        <div class="row">
+        <div class="row" id="main_row">
           <% @books.each do |book| %>
-              <div class="col-xs-6 col-sm-3">
+              <div class="col-xs-6 col-sm-3 custom_class">
                 <div class="general-thumb-wrap">
                   <div class="thumbnail general-thumbnail">
                     <%= image_tag book.main_photo %>
                     <div class="thumb-hover">
                       <div class="general-thumb-link-wrap">
-                      	 <%= link_to catalog_path(id: book.id), class: "thumb-hover-link" do %>
+                      	 <%= link_to catalog_path(id: book.id), class: "thumb-hover-link watch" do %>
 	                         <i aria-hidden="true" class="fa fa-eye thumb-icon"></i>
 	                       <% end %>
-                        <a href="#" class="thumb-hover-link">
+                        <a href="#" class="thumb-hover-link buy">
                           <i class="fa fa-shopping-cart thumb-icon"></i>
                         </a>
                       </div>
@@ -73,9 +73,9 @@
                 </div>
                 <div class="general-thumb-info">
                   <p class="title"><%= book.title %></p>
-                  <p class="font-16 in-gold-500">€<%= book.price %></p>
+                  <p class="font-16 in-gold-500 price">€<%= book.price %></p>
                   <span class="divider-sm"></span>
-                  <p class="lead small"><%= book.authors %></p>
+                  <p class="lead small authors"><%= book.authors %></p>
                 </div>
               </div>
               <% end %>

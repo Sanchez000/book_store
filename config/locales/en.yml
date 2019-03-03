@@ -60,3 +60,15 @@ en:
         btn_next: 'Next'
         btn_previous: 'Previous'
         btn_buy_now: 'Buy Now'
+  services:
+    catalog:
+      price_asc: 'Price: Low to hight'
+      price_desc: 'Price: Hight to low'
+      title_asc: 'Title: A - Z'
+      title_desc: 'Title: Z - A'
+      sales_count_asc: 'Popular first'
+      sales_count_desc: 'Popular first'
+      created_at_asc: 'Newest first'
+      created_at_desc: 'Newest first'
+      default_sotring_column: 'title'
+      base_sotring_direction: 'asc'

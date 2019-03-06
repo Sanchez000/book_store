@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class Categories < ApplicationRecord
+class Category < ApplicationRecord
   has_many :books
 end

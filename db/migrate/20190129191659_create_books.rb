@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :imagen
       t.string :title
       t.decimal :price
-      t.references :categories
+      t.references :category
       t.timestamps
     end
   end

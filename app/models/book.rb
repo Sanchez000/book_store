@@ -1,9 +1,9 @@
 class Book < ApplicationRecord
-  has_many :author_book
-  has_many :author, through: :author_book
+  has_many :author_books
+  has_many :authors, through: :author_books
   belongs_to :categories, optional: true
-  has_many :book_review
-  has_many :review, through: :book_review
+  has_many :book_reviews
+  has_many :reviews, through: :book_reviews
   has_many :book_photos
   accepts_nested_attributes_for :book_photos
   paginates_per 12

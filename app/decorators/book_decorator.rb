@@ -14,6 +14,7 @@ class BookDecorator < Draper::Decorator
   end
 
   def list_dimentions
+    #rebuild model
     "H: #{object.dimentions} x W: #{object.dimentions}  x D: #{object.dimentions}"
   end
 end

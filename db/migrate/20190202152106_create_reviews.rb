@@ -7,7 +7,6 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.integer :rating
       t.text :text
-
       t.timestamps
     end
   end

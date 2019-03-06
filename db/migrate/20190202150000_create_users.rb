@@ -8,7 +8,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :avatar
       t.text :image
       t.string :addres
-
       t.timestamps
     end
   end

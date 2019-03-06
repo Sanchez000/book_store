@@ -4,7 +4,6 @@ class CreateAuthorBooks < ActiveRecord::Migration[5.2]
       t.references :author
       t.references :book
       t.timestamps
-      #
     end
   end
 end

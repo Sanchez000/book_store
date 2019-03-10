@@ -1,4 +1,4 @@
-class CategoriesDecorator < ApplicationDecorator
+class CategoryDecorator < ApplicationDecorator
   delegate_all
 
   def count_books

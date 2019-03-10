@@ -39,7 +39,7 @@ class CatalogService
   end
 
   def sort_current_categories
-    Categories.find_by(id: params[:categori_id]).books.order("#{sort_column} #{sort_direction}")
+    Category.find_by(id: params[:categori_id]).books.order("#{sort_column} #{sort_direction}")
   end
 
   private

@@ -1,25 +1,11 @@
-/*!
- * @preserve
- *
- * Readmore.js jQuery plugin
- * Author: @jed_foster
- * Project home: http://jedfoster.github.io/Readmore.js
- * Licensed under the MIT license
- *
- * Debounce function from http://davidwalsh.name/javascript-debounce-function
- */
-
-/* global jQuery */
 
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
-    // AMD
     define(['jquery'], factory);
   } else if (typeof exports === 'object') {
-    // CommonJS
     module.exports = factory(require('jquery'));
   } else {
-    // Browser globals
+
     factory(jQuery);
   }
 }(function($) {
@@ -36,7 +22,6 @@
         blockCSS: 'display: block; width: 100%;',
         startOpen: false,
 
-        // callbacks
         blockProcessed: function() {},
         beforeToggle: function() {},
         afterToggle: function() {}
@@ -87,13 +72,11 @@
 
     var collapsedHeight = cssMaxHeight || element.data('collapsedHeight') || defaultHeight;
 
-    // Store our measurements.
     element.data({
       expandedHeight: expandedHeight,
       maxHeight: cssMaxHeight,
       collapsedHeight: collapsedHeight
     })
-    // and disable any `max-height` property set in CSS
     .css({
       maxHeight: 'none'
     });
@@ -123,7 +106,6 @@
           '}';
       }
 
-      // Include the transition CSS even if embedCSS is false
       styles += options.selector + '[data-readmore]{' +
         'transition: height ' + options.speed + 'ms;' +
         'overflow: hidden;' +
@@ -159,9 +141,7 @@
 
     this.init();
 
-    // IE8 chokes on `window.addEventListener`, so need to test for support.
     if (window.addEventListener) {
-      // Need to resize boxes when the page has fully loaded.
       window.addEventListener('load', resizeBoxes);
       window.addEventListener('resize', resizeBoxes);
     }
@@ -187,7 +167,6 @@
           heightMargin = current.data('heightMargin');
 
       if (current.outerHeight(true) <= collapsedHeight + heightMargin) {
-        // The block is shorter than the limit, so there's no need to truncate it.
         if (this.options.blockProcessed && typeof this.options.blockProcessed === 'function') {
           this.options.blockProcessed(current, false);
         }
@@ -255,16 +234,12 @@
         newLink = 'moreLink';
       }
 
-      // Fire beforeToggle callback
-      // Since we determined the new "expanded" state above we're now out of sync
-      // with our true current state, so we need to flip the value of `expanded`
       if (this.options.beforeToggle && typeof this.options.beforeToggle === 'function') {
         this.options.beforeToggle(trigger, $element, ! expanded);
       }
 
       $element.css({'height': newHeight});
 
-      // Fire afterToggle callback
       $element.on('transitionend', (function(_this) {
         return function() {
           if (_this.options.afterToggle && typeof _this.options.afterToggle === 'function') {

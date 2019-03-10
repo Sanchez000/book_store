@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-require 'pry'
-
 RSpec.feature 'Catalog page', type: :feature do
   background do
-    Categories.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' }])
+    Category::CATEGORIES_LIST.map { |category| FactoryBot.create(:category, category) }
     15.times do
       book = FactoryBot.create(:random_book)
       BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/1.webp')

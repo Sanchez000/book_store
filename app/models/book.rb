@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
+  belongs_to :category, optional: true
   has_many :author_books
   has_many :authors, through: :author_books
-  belongs_to :categories, optional: true
   has_many :book_reviews
   has_many :reviews, through: :book_reviews
   has_many :book_photos

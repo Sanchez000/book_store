@@ -11,7 +11,6 @@ require 'factory_bot_rails'
 Category.create([{ title: 'Mobile development' }, { title: 'Photo' }, { title: 'Web design' }, { title: 'Web development' } ])
 
 5.times do
-  FactoryBot.create(:random_user)
   FactoryBot.create(:random_author)
 end
 
@@ -40,11 +39,3 @@ AuthorBook.create(author_id: 3, book_id: 7)
 AuthorBook.create(author_id: 2, book_id: 7)
 AuthorBook.create(author_id: 2, book_id: 8)
 AuthorBook.create(author_id: 4, book_id: 8)
-# author_books
-# authors +++++++
-# book_photos
-# book_reviews ----------
-# books+++++++++++
-# categories++++++
-# reviews---------
-# users ++++++++++

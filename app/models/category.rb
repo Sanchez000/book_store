@@ -7,4 +7,6 @@ class Category < ApplicationRecord
     { title: 'Web design' },
     { title: 'Web development' }
   ].freeze
+
+  validates_presence_of :title
 end

@@ -48,3 +48,10 @@ Capybara.default_driver = :poltergeist
 Capybara.app_host = 'http://localhost:3002'
 Capybara.server_host = 'localhost'
 Capybara.server_port = '3002'
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end

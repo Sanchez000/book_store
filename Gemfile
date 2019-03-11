@@ -23,7 +23,6 @@ gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'rails-controller-testing'
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer'
 gem 'turbolinks', '~> 5'
@@ -48,7 +47,9 @@ group :test do
   gem 'database_cleaner'
   gem 'phantomjs'
   gem 'poltergeist'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

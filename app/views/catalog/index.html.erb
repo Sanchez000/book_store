@@ -14,7 +14,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <%= link_to (t_scoped :newest), catalog_index_path(categori_idid: @selected_category_id, page: @selected_page, column: "created_at") %>
+                <%= link_to (t_scoped :newest), catalog_index_path(categori_id: @selected_category_id, page: @selected_page, column: "created_at") %>
               <li>
                 <%= link_to (t_scoped :popular), catalog_index_path(categori_id: @selected_category_id, page: @selected_page, column: "sales_count") %>
               </li>

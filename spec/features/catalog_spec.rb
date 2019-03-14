@@ -2,22 +2,30 @@ require 'rails_helper'
 
 RSpec.feature 'Catalog page', type: :feature do
   background do
-    Category::CATEGORIES_LIST.map { |category| FactoryBot.create(:category, category) }
+    first_category = create(:first_category)
     15.times do
-      book = FactoryBot.create(:random_book)
+      book = create(:random_book, category: first_category)
       BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/1.webp')
     end
+    second_category = create(:second_category)
+    15.times do
+      book = create(:random_book, category: second_category)
+      BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/2.webp')
+    end
+
+    third_category = create(:third_category)
+    15.times do
+      book = create(:random_book, category: third_category)
+      BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/3.webp')
+    end
+
     @books = Book.all
-    @categories = Categories.all
+    @categories = Category.all
   end
 
   describe "GET '/catalog'", type: :feature do
     before(:each) do
       visit catalog_index_path
-    end
-
-    it 'the guest is exactly on the catalog page' do
-      expect(page.find('h1.general-title-margin')).to have_content('Сatalog')
     end
 
     it 'at the first opening books sorted alphabetically' do
@@ -48,6 +56,31 @@ RSpec.feature 'Catalog page', type: :feature do
         find('a.thumb-hover-link.watch').click
       end
       expect(page).to have_current_path(@final_path)
+    end
+
+    it 'contains twelve books per page' do
+      expect(page).to have_css('div.col-xs-6.col-sm-3.custom_class', count: 12)
+    end
+
+    it 'contains pagination on the page' do
+      expect(page).to have_css('ul.pagination')
+    end
+
+    it 'switches between pages correctly and have correct count of books' do
+      old_title_first_book = all('.title').first.text
+      find('ul.pagination li a', text: 'Last »').click
+      expect(all('.title').first.text).not_to eq(old_title_first_book)
+      expect(page).to have_css('div.col-xs-6.col-sm-3.custom_class', count: 9)
+    end
+
+    it 'switches between categories correctly and have correct count of books' do
+      first_displayed_category = all('li.mr-35 a')[1]
+      path_destiny = first_displayed_category['href']
+      first_displayed_category.click
+      expect(page).to have_current_path(path_destiny)
+      expect(page).to have_css('div.col-xs-6.col-sm-3.custom_class', count: 12)
+      find('ul.pagination li a', text: 'Last »').click
+      expect(page).to have_css('div.col-xs-6.col-sm-3.custom_class', count: 3)
     end
   end
 end

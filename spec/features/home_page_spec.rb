@@ -19,7 +19,7 @@ RSpec.feature 'Home page', type: :feature do
       BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/3.webp')
     end
 
-    four_category = create(:four_category)
+    four_category = create(:fourth_category)
     15.times do
       book = create(:random_book, category: four_category)
       BookPhoto.create(book: book, imagen: 'https://s3.amazonaws.com/sanchez000-cloud9/photos/4.webp')

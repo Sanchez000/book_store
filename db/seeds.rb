@@ -1,9 +1,9 @@
 require 'factory_bot_rails'
 
-create(:first_category)
-create(:second_category)
-create(:third_category)
-create(:four_category)
+FactoryBot.create(:first_category)
+FactoryBot.create(:second_category)
+FactoryBot.create(:third_category)
+FactoryBot.create(:fourth_category)
 
 35.times do
   first_author = FactoryBot.create(:random_author)

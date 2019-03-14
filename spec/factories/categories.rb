@@ -15,7 +15,7 @@ FactoryBot.define do
     title { Category::CATEGORIES_LIST.third }
   end
 
-  factory :four_category, class: Category do
-    title { Category::CATEGORIES_LIST.four }
+  factory :fourth_category, class: Category do
+    title { Category::CATEGORIES_LIST.fourth }
   end
 end

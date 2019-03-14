@@ -1,6 +1,9 @@
 require 'factory_bot_rails'
 
-Category::CATEGORIES_LIST.map { |category| FactoryBot.create(:category, category) }
+create(:first_category)
+create(:second_category)
+create(:third_category)
+create(:four_category)
 
 35.times do
   first_author = FactoryBot.create(:random_author)

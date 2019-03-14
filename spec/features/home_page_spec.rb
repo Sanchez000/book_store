@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 RSpec.feature 'Home page', type: :feature do
   background do
@@ -53,11 +52,9 @@ RSpec.feature 'Home page', type: :feature do
     end
 
     it 'transfer to book page onclick on selected best seller' do
-    #  within('div.row.col-sm-6.col-md-3') do
-        first('div.general-thumb-wrap').hover
-        @final_path = page.find('a.thumb-hover-link.watch')['href']
-        find('a.thumb-hover-link.watch').click
-    #  end
+      first('div.general-thumb-wrap').hover
+      @final_path = page.find('a.thumb-hover-link.watch')['href']
+      find('a.thumb-hover-link.watch').click
       expect(page).to have_current_path(@final_path)
     end
   end

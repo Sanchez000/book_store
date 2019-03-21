@@ -7,6 +7,7 @@ class CatalogController < ApplicationController
     @selected_category_id = params[:categori_id] if params[:categori_id]
     @selected_page = params[:page] || MIN_QUANTITY_PAGE
     @books = service.select_books.page(params[:page]).decorate
+    @all_books_count = Book.count(:all)
   end
 
   def show

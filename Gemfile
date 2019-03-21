@@ -9,7 +9,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '>= 3.4.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
-gem 'dotenv-rails', groups: %i[development test]
 gem 'draper'
 gem 'execjs'
 gem 'factory_bot_rails'
@@ -30,7 +29,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'pry', '~> 0.12.2'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
 end
 

@@ -9,6 +9,12 @@
   margin: auto;
 }
 
+p.lead.small.authors {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .description {
   overflow: hidden;
 }

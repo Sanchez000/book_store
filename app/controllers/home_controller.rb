@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
+  LATES_BOOKS = 3
+
   def index
-    @categorys = Category.all
-    @latest_books = Book.order('created_at DESC').first(3)
-    @best_sellers = Book.order('sales_count DESC').first(4)
+    @latest_books = Book.newest.decorate.first(LATES_BOOKS)
+    @best_sellers = Book.best.sellers.decorate
   end
 end

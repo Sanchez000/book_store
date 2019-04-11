@@ -1,34 +1,16 @@
 class CatalogController < ApplicationController
-  # helper_method :sort_column, :sort_direction
+  MIN_QUANTITY_PAGE = 1
 
   def index
-    @categorys = Category.all
-    @books = if params[:id]
-               @selected_category_id = params[:id]
-               Category.find_by(id: params[:id]).books.order("#{sort_column} #{sort_direction}")
-             else
-               Book.all.limit(12).order("#{sort_column} #{sort_direction}")
-             end
+    service = CatalogService.new(params)
+    @sorting_order = service.sorting
+    @selected_category_id = params[:categori_id] if params[:categori_id]
+    @selected_page = params[:page] || MIN_QUANTITY_PAGE
+    @books = service.select_books.page(params[:page]).decorate
+    @all_books_count = Book.count(:all)
   end
 
   def show
-    @current_user
-    @path_to_back = request.referer
-    @categorys = Category.all
-    @book = Book.find_by(id: params[:id])
-  end
-
-  private
-
-  def sortable_columns
-    %w[title price sales_count created_at]
-  end
-
-  def sort_column
-    sortable_columns.include?(params[:column]) ? params[:column] : 'title'
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
+    @book = Book.find_by(id: params[:id]).decorate
   end
 end

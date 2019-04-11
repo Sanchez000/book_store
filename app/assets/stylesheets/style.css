@@ -3,12 +3,25 @@
   color: white !important;
 }
 
-body {
-	padding-top:50px;
+#main_img {
+  max-width: 550px;
+  max-height: 380px;
+  margin: auto;
 }
-/*#####################
-Additional Styles (required)
-#####################*/
+
+p.lead.small.authors {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.description {
+  overflow: hidden;
+}
+
+.small-img {
+  height: 120px;
+}
 
 #myCarousel .carousel-inner {
   padding-bottom: 90px;
@@ -90,12 +103,6 @@ Additional Styles (required)
   background-color: #c59c71 !important;
 }
 
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -313,7 +320,6 @@ th {
   padding: 0;
 }
 
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
   *:before,
@@ -5503,7 +5509,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 8px 12px;
   line-height: 1.5;
   text-decoration: none;
-  color: #337ab7;
+  color: #c59c71;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -5537,8 +5543,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #c59c71;
+  border-color: #c59c71;
   cursor: default;
 }
 
@@ -8575,7 +8581,6 @@ img {
 }
 
 .general-thumbnail {
-  padding: 70% 0;
 }
 
 .general-thumbnail .general-thumbnail-img {

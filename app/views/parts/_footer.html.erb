@@ -4,7 +4,7 @@
       <div class="col-sm-9">
         <ul class="list-inline general-align mb-25">
           <li>
-            <%= link_to "Home", home_path, class: "nav-link" %>
+            <%= link_to "Home", home_index_path, class: "nav-link" %>
           </li>
           <li>
             <a href="#" class="nav-link">Shop</a></li>
@@ -37,6 +37,6 @@
 </footer>
 <%= javascript_include_tag 'jquery.js' %>
 <%= javascript_include_tag 'bootstrap.js' %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.js"></script>
+<%= javascript_include_tag 'readmore.js' %>
 <%= javascript_include_tag 'custom.js' %>
 <%= javascript_include_tag 'https://use.fontawesome.com/67602d7308.js' %>

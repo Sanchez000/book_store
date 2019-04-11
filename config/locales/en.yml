@@ -1,33 +1,43 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  views:
+    catalog:
+      index:
+       all: 'All'
+       catalog: 'Сatalog'
+       currency: '€'
+       newest: 'Newest first'
+       popular: 'Popular first'
+       expensive: 'Price: Hight to low'
+       cheap: 'Price: Low to hight'
+       alphabetically: 'Title: A - Z'
+       desc_alphabetically: 'Title: Z - A'
+      show:
+        btn_back: 'Back to results'
+        currency: '€'
+        btn_cart: 'Add to Cart'
+        description: 'Description'
+        publication_year: 'Year of publication'
+        dimensions: 'Dimensions'
+        materials: 'Materials'
+    home:
+      index:
+        welcome: 'Welcome to our amazing Bookstore!'
+        welcome_description: 'We pore through hundreds of new books each month and select the five best we can find to share with our members.'
+        get_started: 'Get Started'
+        best_sellers: 'Best Sellers'
+        currency: '€'
+        btn_next: 'Next'
+        btn_previous: 'Previous'
+        btn_buy_now: 'Buy Now'
+  services:
+    catalog:
+      price_asc: 'Price: Low to hight'
+      price_desc: 'Price: Hight to low'
+      title_asc: 'Title: A - Z'
+      title_desc: 'Title: Z - A'
+      sales_count_asc: 'Popular first'
+      sales_count_desc: 'Popular first'
+      created_at_asc: 'Newest first'
+      created_at_desc: 'Newest first'
+      default_sotring_column: 'title'
+      base_sotring_direction: 'asc'
